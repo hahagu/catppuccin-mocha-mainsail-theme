@@ -580,6 +580,11 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
   gap: 4px !important;
 }
 
+/* Add gap to dialog toolbar items */
+#app > div.v-dialog__content.v-dialog__content--active > div > div > header > div > div.v-toolbar__items {
+  gap: 4px !important;
+}
+
 /* Add gaps to specific toolbar item containers */
 #page-container > div > div > div.col-4.col > div > header > div > div.v-toolbar__items > div,
 #page-container .col-4 header .v-toolbar__items > div {
