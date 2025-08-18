@@ -10,6 +10,8 @@
 
 ## 🎨 Preview
 
+![Catppuccin Mocha Theme Preview](screenshot.png)
+
 This theme transforms your Mainsail interface with the beautiful Catppuccin Mocha color palette, featuring:
 
 - **Soothing dark backgrounds** with proper contrast ratios
