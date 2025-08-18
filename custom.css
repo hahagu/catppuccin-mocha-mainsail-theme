@@ -1,0 +1,439 @@
+/*
+This is a Catppuccin theme for mainsail.
+Based on the Catppuccin color palette - soothing pastel theme for the high-spirited!
+
+Website:        https://catppuccin.com
+GitHub:         https://github.com/catppuccin/catppuccin
+Style Guide:    https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
+
+CATPPUCCIN MOCHA COLOR PALETTE (Dark theme)
+    Base:        #1e1e2e;
+    Mantle:      #181825;
+    Crust:       #11111b;
+    Surface0:    #313244;
+    Surface1:    #45475a;
+    Surface2:    #585b70;
+    Overlay0:    #6c7086;
+    Overlay1:    #7f849c;
+    Overlay2:    #9399b2;
+    Subtext0:    #a6adc8;
+    Subtext1:    #bac2de;
+    Text:        #cdd6f4;
+    Lavender:    #b4befe;
+    Blue:        #89b4fa;
+    Sapphire:    #74c7ec;
+    Sky:         #89dceb;
+    Teal:        #94e2d5;
+    Green:       #a6e3a1;
+    Yellow:      #f9e2af;
+    Peach:       #fab387;
+    Maroon:      #eba0ac;
+    Red:         #f38ba8;
+    Mauve:       #cba6f7;
+    Pink:        #f5c2e7;
+    Flamingo:    #f2cdcd;
+    Rosewater:   #f5e0dc;
+*/
+
+:root {
+    --Primary:        #cba6f7;    /* Catppuccin: Mauve */
+    --Secondary:      #45475a;    /* Catppuccin: Surface1 */
+    --Green:          #a6e3a1;    /* Catppuccin: Green */
+    --Red:            #f38ba8;    /* Catppuccin: Red */
+    --Warnings:       #fab387;    /* Catppuccin: Peach */
+    --Text:           #cdd6f4;    /* Catppuccin: Text */
+    --DarkerText:     #bac2de;    /* Catppuccin: Subtext1 */
+    --Background:     #313244;    /* Catppuccin: Surface0 */
+    --DarkBackground: #1e1e2e;    /* Catppuccin: Base */
+    --Toolbars:       #45475a;    /* Catppuccin: Surface1 */
+    --Sheets:         #1e1e2e;    /* Catppuccin: Base */
+    --Accent:         #89b4fa;    /* Catppuccin: Blue */
+    --Teal:           #94e2d5;    /* Catppuccin: Teal */
+    --Yellow:         #f9e2af;    /* Catppuccin: Yellow */
+    --Pink:           #f5c2e7;    /* Catppuccin: Pink */
+    --Lavender:       #b4befe;    /* Catppuccin: Lavender */
+    
+    /* Rounded corner values */
+    --border-radius-small:  8px;
+    --border-radius-medium: 12px;
+    --border-radius-large:  16px;
+}
+
+.v-application {
+    --v-primary-base: var(--Primary) !important;
+    --v-anchor-base:  var(--Primary) !important;
+    --v-error-base:   var(--Red) !important;
+    --v-success-base: var(--Green) !important;
+    --v-warning-base: var(--Warnings) !important;
+    --v-panel-base:   var(--DarkBackground) !important;
+}
+
+/* Global rounded corners */
+* {
+    border-radius: var(--border-radius-small) !important;
+}
+
+/* Larger elements get bigger radius */
+.v-card, .v-sheet, .v-window, .v-dialog {
+    border-radius: var(--border-radius-medium) !important;
+}
+
+.v-toolbar, .v-app-bar {
+    border-radius: var(--border-radius-large) !important;
+}
+
+/* Change Color of text */
+.v-btn__content .v-toolbar__title {
+    color: var(--Text) !important;
+}
+.text--darken-2 {
+    color: var(--Text) !important;
+}
+.subheading {
+    color: var(--Text) !important;
+}
+.theme--dark.v-icon, .v-btn__content, .v-text-field__suffix {
+    color: var(--Text) !important;
+}
+.theme--dark.v-input, .theme--dark.v-input input, .theme--dark.v-input textarea {
+    color: var(--Text) !important;
+}
+
+/* Change Primary color */
+.v-application .primary {
+    background-color: var(--Primary) !important;
+    border-color: var(--Primary) !important;
+}
+.v-application .primary--text {
+    color: var(--Primary) !important;
+    caret-color: var(--Primary) !important;
+}
+.v-application .blue--text {
+    color: var(--Accent) !important;
+    caret-color: var(--Accent) !important;
+}
+.v-application .info {
+    background-color: var(--Accent) !important;
+    border-color: var(--Accent) !important;
+}
+.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)>.v-input__control>.v-input__slot:focus-within {
+    border: thin solid var(--Primary) !important;
+    border-radius: var(--border-radius-small) !important;
+}
+.v-text-field.v-text-field--solo .v-input__control input {
+    caret-color: var(--Primary);
+}
+.theme--dark.v-color-picker .v-color-picker__input input {
+    border: thin solid var(--Primary);
+    color: var(--Text);
+    border-radius: var(--border-radius-small) !important;
+}
+
+/* Change Secondary color */
+.v-application .secondary {
+    background-color: var(--Secondary) !important;
+    border-color: var(--Secondary) !important;
+}
+.theme--dark.v-chip {
+    color: var(--Text) !important;
+    background-color: var(--Secondary) !important;
+    border-radius: var(--border-radius-medium) !important;
+}
+
+/* Change Background and Toolbars */
+body {
+    background-color: var(--Background);
+}
+.v-sheet {
+    border-color: var(--Background);
+}
+
+/* Darkest Color / Base colors */
+.theme--dark.v-application {
+    background: var(--DarkBackground);
+    color: var(--Text);
+}
+.v-application .grey.darken-3 {
+    background-color: var(--DarkBackground) !important;
+    border-color: var(--DarkBackground) !important;
+}
+.theme--dark.v-text-field--solo>.v-input__control>.v-input__slot {
+    background: var(--DarkBackground) !important;
+    border-radius: var(--border-radius-small) !important;
+}
+.theme--dark.v-data-table {
+    background-color: var(--DarkBackground) !important;
+    border-radius: var(--border-radius-medium) !important;
+}
+.v-data-table>.v-data-table__wrapper>table {
+    background-color: var(--DarkBackground) !important;
+}
+.theme--dark.v-btn.v-btn--has-bg {
+    background-color: var(--DarkBackground);
+    border-radius: var(--border-radius-small) !important;
+}
+.theme--dark.v-tabs>.v-tabs-bar {
+    background-color: var(--DarkBackground);
+    border-radius: var(--border-radius-medium) !important;
+}
+.theme--dark.v-window>.v-window__container {
+    background-color: var(--DarkBackground);
+}
+
+/* Sheets - such as "Controls" or "Temperatures" */
+.theme--dark.v-sheet {
+    background-color: var(--Sheets);
+    border-radius: var(--border-radius-medium) !important;
+}
+.v-toolbar__content, .v-toolbar__extension {
+    background-color: var(--Toolbars);
+    box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-large) !important;
+}
+
+/* vCard and subtitle Text Color */
+.theme--dark.v-card .v-card__subtitle, .theme--dark.v-card>.v-card__text {
+    color: var(--DarkerText);
+}
+
+/* Green elements */
+.v-application .green--text {
+    color: var(--Green) !important;
+    caret-color: var(--Green) !important;
+}
+.v-application .green {
+    background-color: var(--Green) !important;
+    border-color: var(--Green) !important;
+}
+.v-application .green--text.text--darken-1 {
+    color: var(--Green) !important;
+    caret-color: var(--Green) !important;
+}
+.v-toast__item--success {
+    background-color: var(--Green) !important;
+    color: var(--DarkBackground) !important;
+    border-radius: var(--border-radius-medium) !important;
+}
+
+/* Warnings and peach elements */
+.v-application button.warning {
+    background: var(--Warnings) !important;
+    background-color: var(--Warnings) !important;
+    border-color: var(--Warnings) !important;
+    border-radius: var(--border-radius-small) !important;
+}
+.theme--dark.warning--text {
+    color: var(--Warnings) !important;
+}
+.v-toast__item--warning {
+    background-color: var(--Warnings) !important;
+    border-radius: var(--border-radius-medium) !important;
+}
+.v-application .orange {
+    background: var(--Warnings) !important;
+    background-color: var(--Warnings) !important;
+}
+
+/* Red elements */
+.v-application .red {
+    background-color: var(--Red) !important;
+    border-color: var(--Red) !important;
+}
+.v-application .red--text.text--darken-1 {
+    color: var(--Red) !important;
+    caret-color: var(--Red) !important;
+}
+.v-application .red--text {
+    color: var(--Red) !important;
+    caret-color: var(--Red) !important;
+}
+.v-application .error {
+    background-color: var(--Red) !important;
+    border-color: var(--Red) !important;
+}
+.v-toast__item--error {
+    background-color: var(--Red) !important;
+    border-radius: var(--border-radius-medium) !important;
+}
+
+/* Buttons with rounded corners */
+.v-btn {
+    border-radius: var(--border-radius-small) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.v-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(203, 166, 247, 0.3);
+}
+
+.v-btn-toggle>.v-btn.v-btn {
+    opacity: 1;
+    border-radius: var(--border-radius-small) !important;
+}
+.theme--dark.v-btn--active:before {
+    opacity: 1;
+    background-color: var(--Toolbars) !important;
+}
+.theme--dark.v-btn.v-btn--disabled.v-btn--has-bg {
+    opacity: 1;
+    background-color: var(--Toolbars) !important;
+}
+.v-btn--disabled span.v-btn__content {
+    color: hsla(0,0%,100%,.3) !important;
+}
+
+/* Enhanced cards and panels */
+.v-card {
+    box-shadow: 0 4px 25px rgba(30, 30, 46, 0.3) !important;
+    backdrop-filter: blur(10px);
+}
+
+.v-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(30, 30, 46, 0.4) !important;
+}
+
+/* Input fields with better styling */
+.v-text-field--outlined .v-input__slot {
+    border-radius: var(--border-radius-small) !important;
+    border-color: var(--Secondary) !important;
+}
+
+.v-text-field--outlined.v-input--is-focused .v-input__slot {
+    border-color: var(--Primary) !important;
+    box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.2);
+}
+
+/* Tabs with rounded styling */
+.v-tabs .v-tab {
+    border-radius: var(--border-radius-small) !important;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+}
+
+.v-tabs .v-tab--active {
+    background-color: var(--Primary) !important;
+    color: var(--DarkBackground) !important;
+}
+
+/* Progress bars */
+.v-progress-linear {
+    border-radius: var(--border-radius-small) !important;
+    overflow: hidden;
+}
+
+.v-progress-linear__determinate {
+    background: linear-gradient(45deg, var(--Primary), var(--Lavender)) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--Background);
+    border-radius: var(--border-radius-small);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--Secondary);
+    border-radius: var(--border-radius-small);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--Primary);
+}
+
+/*
+    CATPPUCCIN-INSPIRED ICON CHANGES
+    Material Design Icons can be found on https://pictogrammers.github.io/@mdi/font/5.2.45/
+*/
+
+/* Thermometer to Chemical Flask (Science theme) */
+.mdi-thermometer-lines:before {
+    content: "\F0828";
+}
+/* Heatbed to Fire (Cozy theme) */
+.mdi-radiator-disabled:before {
+    content: "\F0238";
+    color: var(--Text);
+}
+/* Nozzle to Precision tool */
+.mdi-printer-3d-nozzle:before {
+    content: "\F0E22";
+    color: var(--Text);
+}
+/* Snowflake to Atom (Science theme) */
+.mdi-snowflake:before {
+    content: "\F0708";
+}
+/* Controls to Gaming controller (Playful theme) */
+.mdi-gamepad:before {
+    content: "\F1258";
+}
+/* Home to Cozy House */
+.mdi-home:before {
+    content: "\F011A";
+}
+/* Cog to Sparkles (Whimsical theme) */
+.mdi-cog:before {
+    content: "\F1545";
+}
+/* Settings to Magic Wand */
+.mdi-dip-switch:before {
+    content: "\F0CEC";
+}
+/* Code to Stars (Dreamy theme) */
+.mdi-code-tags:before {
+    content: "\F0BCA";
+}
+/* Information to Lightning (Energy theme) */
+.mdi-information:before {
+    content: "\F140C";
+}
+/* Fan to Leaf (Nature theme) */
+.mdi-fan:before {
+    content: "\F09FB";
+}
+/* Connection to Heart (Friendly theme) */
+.mdi-connection:before {
+    content: "\F0348";
+}
+/* Statistics to Rainbow */
+.mdi-chart-areaspline:before {
+    content: "\F150E";
+}
+/* History to Clock with sparkles */
+.mdi-history:before {
+    content: "\F1545";
+}
+/* G-code files to Scroll */
+.mdi-file-document-multiple-outline:before {
+    content: "\F0E22";
+}
+
+/* Additional pastel accent colors for various elements */
+.accent-teal { color: var(--Teal) !important; }
+.accent-yellow { color: var(--Yellow) !important; }
+.accent-pink { color: var(--Pink) !important; }
+.accent-lavender { color: var(--Lavender) !important; }
+
+/* Soft glow effects for interactive elements */
+.v-btn:focus {
+    box-shadow: 0 0 0 3px rgba(203, 166, 247, 0.3);
+}
+
+.v-text-field:focus-within {
+    box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.2);
+}
+
+/* Catppuccin-inspired gradient backgrounds */
+.catppuccin-gradient {
+    background: linear-gradient(135deg, var(--Primary) 0%, var(--Lavender) 50%, var(--Pink) 100%);
+}
+
+.catppuccin-subtle-gradient {
+    background: linear-gradient(135deg, var(--DarkBackground) 0%, var(--Background) 100%);
+}
