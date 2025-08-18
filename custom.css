@@ -1882,3 +1882,19 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
   border-color: var(--ctp-blue) !important;
   box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.2) !important;
 }
+
+/* ===== Logo Replacement ===== */
+/* Replace SVG logo with PNG logo */
+#app > div.v-application--wrap > div:nth-child(2) > header > div > a svg {
+  display: none !important;
+}
+
+#app > div.v-application--wrap > div:nth-child(2) > header > div > a {
+  background-image: url('./logo.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-block !important;
+}
