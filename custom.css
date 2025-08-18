@@ -415,6 +415,139 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
   padding-right: 42px !important;
 }
 
+/* Fix input text cutoff when suffix is present */
+.v-text-field .v-text-field__suffix {
+  color: var(--ctp-subtext1) !important;
+  font-size: 14px !important;
+  padding-left: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1 !important;
+}
+
+/* Adjust input padding for all text fields to prevent suffix overlap */
+.v-text-field .v-text-field__slot input {
+  padding-right: 40px !important;
+}
+
+/* Specific override for disabled inputs with suffixes */
+.v-text-field.v-input--is-disabled .v-text-field__slot input {
+  padding-right: 40px !important;
+  color: var(--ctp-subtext0) !important;
+}
+
+/* Ensure number inputs still have correct padding for stepper buttons */
+.v-text-field input[type="number"]:not(.v-text-field__slot input) {
+  padding-right: 42px !important;
+}
+
+/* Comprehensive fix for input containers and overflow issues */
+
+/* Base input field improvements for all text fields with suffixes */
+.v-text-field .v-text-field__slot {
+  min-width: 100px !important;
+  width: auto !important;
+  overflow: visible !important;
+}
+
+.v-text-field .v-text-field__slot input {
+  padding-right: 35px !important;
+  padding-left: 12px !important;
+  text-align: left !important;
+  width: 100% !important;
+  min-width: 70px !important;
+  box-sizing: border-box !important;
+}
+
+/* Specific fixes for slider inputs and dense components */
+.v-input._slider-input,
+.v-input--dense {
+  min-width: 110px !important;
+  width: auto !important;
+  max-width: none !important;
+  flex: 0 1 auto !important;
+}
+
+.v-input._slider-input .v-input__control,
+.v-input--dense .v-input__control {
+  min-width: 110px !important;
+  width: 100% !important;
+}
+
+.v-input._slider-input .v-input__slot,
+.v-input--dense .v-input__slot {
+  min-width: 110px !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.v-input._slider-input .v-text-field__slot,
+.v-input--dense .v-text-field__slot {
+  min-width: 110px !important;
+  width: 100% !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.v-input._slider-input .v-text-field__slot input,
+.v-input--dense .v-text-field__slot input {
+  padding-right: 35px !important;
+  padding-left: 12px !important;
+  min-width: 70px !important;
+  width: calc(100% - 47px) !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+}
+
+/* Suffix positioning and styling */
+.v-text-field .v-text-field__suffix {
+  position: absolute !important;
+  right: 8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background-color: transparent !important;
+  color: var(--ctp-subtext1) !important;
+  font-size: 12px !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+/* Outlined input adjustments */
+.v-text-field--outlined .v-text-field__slot {
+  min-width: 110px !important;
+}
+
+.v-text-field--outlined .v-text-field__slot input {
+  padding-right: 35px !important;
+  padding-left: 12px !important;
+}
+
+/* Container adjustments to prevent overflow */
+.v-input._slider-input .v-input__control .v-input__slot,
+.v-input--dense .v-input__control .v-input__slot {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Prevent text from overflowing container boundaries */
+.v-text-field fieldset {
+  min-width: 110px !important;
+}
+
+/* Additional fix for position inputs like in your screenshot */
+.v-text-field input[type="number"] {
+  text-overflow: clip !important;
+  overflow: visible !important;
+}
+
 /* Reset/clear button styling - only for text fields with clear buttons */
 .v-text-field .v-input__append-inner .v-btn[aria-label*="clear"],
 .v-text-field .v-input__append-inner .v-btn[title*="clear"],
@@ -1593,55 +1726,159 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
   background-color: rgba(137, 180, 250, 0.2) !important;
 }
 
-/* ===== Data Footer Select Div Styling ===== */
-/* Fix for the specific selector that should be a number selector dropdown */
-#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div,
-.v-data-footer__select > div,
-.gcode-files-panel .v-data-footer__select > div {
-  display: flex !important;
-  align-items: center !important;
+/* ===== Data Footer V-Select Component Styling ===== */
+/* Fix for the v-select component in data footer that should look like a proper dropdown */
+
+/* Target the main v-select container in data footers */
+.v-data-footer .v-select,
+.gcode-files-panel .v-data-footer .v-select,
+.files-table .v-data-footer .v-select {
+  max-width: 120px !important;
+  min-width: 80px !important;
+}
+
+/* Style the main input slot */
+.v-data-footer .v-select .v-input__slot,
+.gcode-files-panel .v-data-footer .v-select .v-input__slot,
+.files-table .v-data-footer .v-select .v-input__slot {
   background-color: var(--ctp-surface0) !important;
   border: 1px solid var(--ctp-surface1) !important;
   border-radius: 12px !important;
-  padding: 8px 12px !important;
   min-height: 40px !important;
-  color: var(--ctp-text) !important;
-  font-size: 14px !important;
-  cursor: pointer !important;
+  padding: 0 !important; /* allow internal slot to control spacing */
   transition: all 0.2s ease !important;
-  position: relative !important;
+  cursor: pointer !important;
 }
 
-#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div:hover,
-.v-data-footer__select > div:hover,
-.gcode-files-panel .v-data-footer__select > div:hover {
+.v-data-footer .v-select .v-input__slot:hover,
+.gcode-files-panel .v-data-footer .v-select .v-input__slot:hover,
+.files-table .v-data-footer .v-select .v-input__slot:hover {
   border-color: var(--ctp-blue) !important;
   background-color: var(--ctp-surface1) !important;
 }
 
-/* Add dropdown arrow indicator */
-#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div::after,
-.v-data-footer__select > div::after,
-.gcode-files-panel .v-data-footer__select > div::after {
-  content: "▼" !important;
-  position: absolute !important;
-  right: 12px !important;
+/* Style the select slot area */
+.v-data-footer .v-select .v-select__slot,
+.gcode-files-panel .v-data-footer .v-select .v-select__slot,
+.files-table .v-data-footer .v-select .v-select__slot {
+  padding: 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+}
+
+/* Style the selected value display */
+.v-data-footer .v-select .v-select__selections,
+.gcode-files-panel .v-data-footer .v-select .v-select__selections,
+.files-table .v-data-footer .v-select .v-select__selections {
+  flex: 1 !important;
+  color: var(--ctp-text) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 100% !important;
+  order: 1 !important; /* ensure number is before arrow */
+}
+
+.v-data-footer .v-select .v-select__selection,
+.gcode-files-panel .v-data-footer .v-select .v-select__selection,
+.files-table .v-data-footer .v-select .v-select__selection {
+  color: var(--ctp-text) !important;
+  max-width: 100% !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+/* Ensure the selected value text is always visible with high specificity */
+.v-data-footer .v-select .v-select__selection--comma,
+.gcode-files-panel .v-data-footer .v-select .v-select__selection--comma,
+.files-table .v-data-footer .v-select .v-select__selection--comma {
+  color: var(--ctp-text) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+/* Ultra-aggressive text visibility for data footer select values */
+.v-data-footer .v-select div,
+.v-data-footer .v-select span,
+.gcode-files-panel .v-data-footer .v-select div,
+.gcode-files-panel .v-data-footer .v-select span,
+.files-table .v-data-footer .v-select div,
+.files-table .v-data-footer .v-select span {
+  color: var(--ctp-text) !important;
+}
+
+/* Force text color on any text content inside data footer selects */
+.v-data-footer .v-input.v-select *,
+.gcode-files-panel .v-data-footer .v-input.v-select *,
+.files-table .v-data-footer .v-input.v-select * {
+  color: var(--ctp-text) !important;
+}
+
+/* Style the dropdown arrow */
+.v-data-footer .v-select .v-input__append-inner,
+.gcode-files-panel .v-data-footer .v-select .v-input__append-inner,
+.files-table .v-data-footer .v-select .v-input__append-inner {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: static !important; /* keep in normal flow, to the right */
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  min-width: 24px !important;
+  max-width: none !important;
+  height: 100% !important;
+  align-self: center !important;
+  order: 2 !important;
+}
+
+.v-data-footer .v-select .v-input__append-inner .v-icon,
+.gcode-files-panel .v-data-footer .v-select .v-input__append-inner .v-icon,
+.files-table .v-data-footer .v-select .v-input__append-inner .v-icon {
   color: var(--ctp-subtext1) !important;
-  font-size: 12px !important;
-  pointer-events: none !important;
+  font-size: 20px !important;
   transition: color 0.2s ease !important;
 }
 
-#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div:hover::after,
-.v-data-footer__select > div:hover::after,
-.gcode-files-panel .v-data-footer__select > div:hover::after {
+.v-data-footer .v-select:hover .v-input__append-inner .v-icon,
+.gcode-files-panel .v-data-footer .v-select:hover .v-input__append-inner .v-icon,
+.files-table .v-data-footer .v-select:hover .v-input__append-inner .v-icon {
   color: var(--ctp-blue) !important;
 }
 
-/* Style the text inside the dropdown div */
-#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div span,
-.v-data-footer__select > div span,
-.gcode-files-panel .v-data-footer__select > div span {
-  color: var(--ctp-text) !important;
-  font-weight: 500 !important;
+/* Hide the hidden input */
+.v-data-footer .v-select input[type="hidden"],
+.gcode-files-panel .v-data-footer .v-select input[type="hidden"],
+.files-table .v-data-footer .v-select input[type="hidden"] {
+  display: none !important;
+}
+
+/* Style the readonly input */
+.v-data-footer .v-select input[readonly],
+.gcode-files-panel .v-data-footer .v-select input[readonly],
+.files-table .v-data-footer .v-select input[readonly] {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Remove focus outline since we're using custom styling */
+.v-data-footer .v-select.v-input--is-focused .v-input__slot,
+.gcode-files-panel .v-data-footer .v-select.v-input--is-focused .v-input__slot,
+.files-table .v-data-footer .v-select.v-input--is-focused .v-input__slot {
+  border-color: var(--ctp-blue) !important;
+  box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.2) !important;
 }
