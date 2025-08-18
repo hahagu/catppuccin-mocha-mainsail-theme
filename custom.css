@@ -24,10 +24,14 @@
   /* Accent Colors */
   --ctp-blue: #89b4fa;
   --ctp-sapphire: #74c7ec;
+  --ctp-sky: #89dceb;
+  --ctp-teal: #94e2d5;
   --ctp-green: #a6e3a1;
   --ctp-yellow: #f9e2af;
   --ctp-peach: #fab387;
+  --ctp-maroon: #eba0ac;
   --ctp-red: #f38ba8;
+  --ctp-pink: #f5c2e7;
   --ctp-mauve: #cba6f7;
 }
 
@@ -1136,23 +1140,12 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
   color: var(--ctp-text) !important;
 }
 
-.v-application p,
-.v-application span,
-.v-application div {
-  color: inherit;
-}
-
 /* ===== High Specificity Fixes for Common Elements ===== */
 .v-toolbar__content * {
   color: var(--ctp-text) !important;
 }
 
 .v-list-item__content * {
-  color: inherit !important;
-}
-
-.v-card__text *,
-.v-card__title * {
   color: inherit !important;
 }
 
@@ -1227,4 +1220,370 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
 
 .v-icon.error--text {
   color: var(--ctp-red) !important;
+}
+
+/* ===== CodeMirror Syntax Highlighting - Catppuccin Mocha ===== */
+
+/* Main CodeMirror container styling */
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar,
+.vue-codemirror.codemirror,
+.CodeMirror {
+  background-color: var(--ctp-base) !important;
+  color: var(--ctp-text) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--ctp-surface0) !important;
+}
+
+/* Default text */
+.CodeMirror-code,
+.cm-s-default {
+  color: var(--ctp-text) !important;
+}
+
+/* Keywords (def, class, if, for, while, return, etc.) */
+.cm-keyword {
+  color: var(--ctp-mauve) !important;
+  font-weight: 600 !important;
+}
+
+/* Built-in functions and types */
+.cm-builtin,
+.cm-type {
+  color: var(--ctp-peach) !important;
+  font-weight: 500 !important;
+}
+
+/* Function definitions and calls */
+.cm-def,
+.cm-function {
+  color: var(--ctp-blue) !important;
+  font-weight: 500 !important;
+}
+
+/* Variables and identifiers */
+.cm-variable,
+.cm-variable-2,
+.cm-variable-3 {
+  color: var(--ctp-text) !important;
+}
+
+/* Strings */
+.cm-string {
+  color: var(--ctp-green) !important;
+}
+
+/* Numbers */
+.cm-number {
+  color: var(--ctp-peach) !important;
+}
+
+/* Comments */
+.cm-comment {
+  color: var(--ctp-subtext0) !important;
+  font-style: italic !important;
+}
+
+/* Operators (+, -, *, /, =, etc.) */
+.cm-operator {
+  color: var(--ctp-sapphire) !important;
+}
+
+/* Punctuation (brackets, parentheses, commas) */
+.cm-punctuation,
+.cm-bracket {
+  color: var(--ctp-text) !important;
+}
+
+/* Properties and attributes */
+.cm-property,
+.cm-attribute {
+  color: var(--ctp-blue) !important;
+}
+
+/* Tags (for HTML/XML) */
+.cm-tag {
+  color: var(--ctp-mauve) !important;
+}
+
+/* Meta information */
+.cm-meta {
+  color: var(--ctp-yellow) !important;
+}
+
+/* Qualifiers and special keywords */
+.cm-qualifier {
+  color: var(--ctp-mauve) !important;
+}
+
+/* Atoms (true, false, null, None, etc.) */
+.cm-atom {
+  color: var(--ctp-peach) !important;
+}
+
+/* Errors */
+.cm-error {
+  color: var(--ctp-red) !important;
+  background-color: rgba(243, 139, 168, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+/* Links */
+.cm-link {
+  color: var(--ctp-blue) !important;
+  text-decoration: underline !important;
+}
+
+/* Headers (for markdown) */
+.cm-header {
+  color: var(--ctp-blue) !important;
+  font-weight: bold !important;
+}
+
+/* Strong/Bold (for markdown) */
+.cm-strong {
+  color: var(--ctp-yellow) !important;
+  font-weight: bold !important;
+}
+
+/* Emphasis/Italic (for markdown) */
+.cm-em {
+  color: var(--ctp-green) !important;
+  font-style: italic !important;
+}
+
+/* Special characters */
+.cm-special {
+  color: var(--ctp-red) !important;
+}
+
+/* Current line highlight */
+.CodeMirror-activeline-background {
+  background-color: var(--ctp-surface0) !important;
+}
+
+/* Selection */
+.CodeMirror-selected {
+  background-color: rgba(137, 180, 250, 0.2) !important;
+}
+
+/* Cursor */
+.CodeMirror-cursor {
+  border-left: 2px solid var(--ctp-blue) !important;
+}
+
+/* Gutters (line numbers) */
+.CodeMirror-gutters {
+  background-color: var(--ctp-mantle) !important;
+  border-right: 1px solid var(--ctp-surface0) !important;
+}
+
+.CodeMirror-linenumber {
+  color: var(--ctp-subtext0) !important;
+  padding: 0 8px !important;
+}
+
+/* Focused editor */
+.CodeMirror-focused .CodeMirror-cursor {
+  border-left: 2px solid var(--ctp-blue) !important;
+}
+
+/* Scrollbars for CodeMirror */
+.CodeMirror-scrollbar-filler {
+  background-color: var(--ctp-base) !important;
+}
+
+.CodeMirror-gutter-filler {
+  background-color: var(--ctp-mantle) !important;
+}
+
+/* Matching brackets */
+.CodeMirror-matchingbracket {
+  background-color: rgba(137, 180, 250, 0.2) !important;
+  color: var(--ctp-blue) !important;
+  font-weight: bold !important;
+}
+
+/* Non-matching brackets */
+.CodeMirror-nonmatchingbracket {
+  background-color: rgba(243, 139, 168, 0.2) !important;
+  color: var(--ctp-red) !important;
+}
+
+/* Search highlighting */
+.CodeMirror-searching {
+  background-color: rgba(249, 226, 175, 0.3) !important;
+}
+
+/* Language-specific enhancements */
+
+/* Python-specific */
+.cm-s-default .cm-python-keyword {
+  color: var(--ctp-mauve) !important;
+}
+
+.cm-s-default .cm-python-builtin {
+  color: var(--ctp-peach) !important;
+}
+
+/* JavaScript/TypeScript-specific */
+.cm-s-default .cm-javascript-keyword {
+  color: var(--ctp-mauve) !important;
+}
+
+.cm-s-default .cm-typescript-keyword {
+  color: var(--ctp-mauve) !important;
+}
+
+/* JSON-specific */
+.cm-s-default .cm-json-property {
+  color: var(--ctp-blue) !important;
+}
+
+/* YAML-specific */
+.cm-s-default .cm-yaml-key {
+  color: var(--ctp-blue) !important;
+}
+
+/* G-code specific highlighting for 3D printing */
+.cm-gcode {
+  color: var(--ctp-text) !important;
+}
+
+.cm-gcode-command {
+  color: var(--ctp-blue) !important;
+  font-weight: bold !important;
+}
+
+.cm-gcode-parameter {
+  color: var(--ctp-green) !important;
+}
+
+.cm-gcode-value {
+  color: var(--ctp-peach) !important;
+}
+
+.cm-gcode-comment {
+  color: var(--ctp-subtext0) !important;
+  font-style: italic !important;
+}
+
+/* Specific targeting for the mentioned selector */
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .CodeMirror-code {
+  color: var(--ctp-text) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-keyword {
+  color: var(--ctp-mauve) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-string {
+  color: var(--ctp-green) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-number {
+  color: var(--ctp-peach) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-comment {
+  color: var(--ctp-subtext0) !important;
+  font-style: italic !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-operator {
+  color: var(--ctp-sapphire) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-function {
+  color: var(--ctp-blue) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-builtin {
+  color: var(--ctp-peach) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-atom {
+  color: var(--ctp-peach) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div > div.vue-codemirror.codemirror.withSidebar .cm-variable {
+  color: var(--ctp-text) !important;
+}
+
+/* ===== CodeMirror 6 Syntax Highlighting - Catppuccin Mocha ===== */
+
+/* Override CodeMirror 6 dynamically generated classes with Catppuccin colors */
+
+/* Keywords/Section Headers (ͼt) - [include], [stepper_x], [tmc2209] */
+.ͼt {
+  color: var(--ctp-mauve) !important;
+  font-weight: 600 !important;
+}
+
+/* Comments (ͼ13) - Lines starting with # */
+.ͼ13 {
+  color: var(--ctp-subtext0) !important;
+  font-style: italic !important;
+}
+
+/* Property Names (ͼp) - enable_pin:, step_pin:, etc. */
+.ͼp {
+  color: var(--ctp-blue) !important;
+  font-weight: 500 !important;
+}
+
+/* String Values (ͼy) - !P2.1, P2.2, pin names */
+.ͼy {
+  color: var(--ctp-green) !important;
+}
+
+/* Numeric Values (ͼv) - 16, 40, 0.8, etc. */
+.ͼv {
+  color: var(--ctp-peach) !important;
+}
+
+/* Ensure high specificity for dialog content */
+#app > div.v-dialog__content.v-dialog__content--active .ͼt {
+  color: var(--ctp-mauve) !important;
+  font-weight: 600 !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active .ͼ13 {
+  color: var(--ctp-subtext0) !important;
+  font-style: italic !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active .ͼp {
+  color: var(--ctp-blue) !important;
+  font-weight: 500 !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active .ͼy {
+  color: var(--ctp-green) !important;
+}
+
+#app > div.v-dialog__content.v-dialog__content--active .ͼv {
+  color: var(--ctp-peach) !important;
+}
+
+/* Additional common CodeMirror 6 classes that might appear */
+.ͼo { color: var(--ctp-sapphire) !important; } /* Operators */
+.ͼn { color: var(--ctp-red) !important; } /* Errors */
+.ͼs { color: var(--ctp-yellow) !important; } /* Special */
+.ͼb { color: var(--ctp-teal) !important; } /* Built-ins */
+.ͼm { color: var(--ctp-pink) !important; } /* Meta */
+.ͼa { color: var(--ctp-sky) !important; } /* Attributes */
+
+/* Default text color for CodeMirror content */
+.cm-content {
+  color: var(--ctp-text) !important;
+}
+
+/* Active line background */
+.cm-activeLine {
+  background-color: rgba(69, 71, 90, 0.3) !important;
+}
+
+/* Selection background */
+.cm-selectionBackground {
+  background-color: rgba(137, 180, 250, 0.2) !important;
 }
