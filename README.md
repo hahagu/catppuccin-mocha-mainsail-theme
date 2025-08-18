@@ -93,19 +93,6 @@ This theme transforms your Mainsail interface with the beautiful Catppuccin Moch
 - **Readable font sizes** and spacing
 - **Color-blind friendly** status indicators
 
-## 🖼️ Optional Assets
-
-For the complete experience, you can add these optional assets to your `.theme` folder:
-
-### Logos & Icons
-- `sidebar-logo.svg` - Custom logo for the sidebar
-- `favicon-16x16.png` - Browser tab icon (16x16)
-- `favicon-32x32.png` - Browser tab icon (32x32)
-
-### Backgrounds  
-- `sidebar-background.svg` - Subtle sidebar background pattern
-- `main-background.svg` - Optional main content background
-
 ## 🛠️ Customization
 
 ### Changing Accent Colors
