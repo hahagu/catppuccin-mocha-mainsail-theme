@@ -1587,3 +1587,56 @@ form > div > div.v-input__append-outer > div > button.mb-n3.v-btn.v-btn--icon.v-
 .cm-selectionBackground {
   background-color: rgba(137, 180, 250, 0.2) !important;
 }
+
+/* ===== Data Footer Select Div Styling ===== */
+/* Fix for the specific selector that should be a number selector dropdown */
+#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div,
+.v-data-footer__select > div,
+.gcode-files-panel .v-data-footer__select > div {
+  display: flex !important;
+  align-items: center !important;
+  background-color: var(--ctp-surface0) !important;
+  border: 1px solid var(--ctp-surface1) !important;
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+  min-height: 40px !important;
+  color: var(--ctp-text) !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div:hover,
+.v-data-footer__select > div:hover,
+.gcode-files-panel .v-data-footer__select > div:hover {
+  border-color: var(--ctp-blue) !important;
+  background-color: var(--ctp-surface1) !important;
+}
+
+/* Add dropdown arrow indicator */
+#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div::after,
+.v-data-footer__select > div::after,
+.gcode-files-panel .v-data-footer__select > div::after {
+  content: "▼" !important;
+  position: absolute !important;
+  right: 12px !important;
+  color: var(--ctp-subtext1) !important;
+  font-size: 12px !important;
+  pointer-events: none !important;
+  transition: color 0.2s ease !important;
+}
+
+#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div:hover::after,
+.v-data-footer__select > div:hover::after,
+.gcode-files-panel .v-data-footer__select > div:hover::after {
+  color: var(--ctp-blue) !important;
+}
+
+/* Style the text inside the dropdown div */
+#page-container > div > div > div > div.v-card.v-sheet.theme--dark.panel.gcode-files-panel.mb-3.mb-md-6 > div > div.v-data-table.files-table.v-data-table--has-bottom.theme--dark.v-data-table--selectable > div.v-data-footer > div.v-data-footer__select > div span,
+.v-data-footer__select > div span,
+.gcode-files-panel .v-data-footer__select > div span {
+  color: var(--ctp-text) !important;
+  font-weight: 500 !important;
+}
